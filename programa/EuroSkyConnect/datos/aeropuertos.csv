@@ -1,0 +1,42 @@
+﻿codigo;nombre;ciudad;pais;latitud;longitud;moneda;simbolo;tipoCambioEUR
+MAD;Adolfo Suarez Madrid-Barajas;Madrid;Espana;40.4983;-3.5676;EUR;EUR;1.0
+BCN;Josep Tarradellas Barcelona-El Prat;Barcelona;Espana;41.2974;2.0833;EUR;EUR;1.0
+LIS;Humberto Delgado;Lisboa;Portugal;38.7742;-9.1342;EUR;EUR;1.0
+OPO;Francisco Sa Carneiro;Oporto;Portugal;41.2481;-8.6814;EUR;EUR;1.0
+CDG;Charles de Gaulle;Paris;Francia;49.0097;2.5479;EUR;EUR;1.0
+ORY;Paris Orly;Paris;Francia;48.7262;2.3652;EUR;EUR;1.0
+LHR;Heathrow;Londres;Reino Unido;51.47;-0.4543;GBP;GBP;0.85
+MAN;Manchester Airport;Manchester;Reino Unido;53.3537;-2.275;GBP;GBP;0.85
+DUB;Dublin Airport;Dublin;Irlanda;53.4213;-6.2701;EUR;EUR;1.0
+AMS;Schiphol;Amsterdam;Paises Bajos;52.3105;4.7683;EUR;EUR;1.0
+BRU;Brussels Airport;Bruselas;Belgica;50.901;4.4844;EUR;EUR;1.0
+LUX;Luxembourg Airport;Luxemburgo;Luxemburgo;49.6266;6.2115;EUR;EUR;1.0
+FRA;Frankfurt Airport;Frankfurt;Alemania;50.0379;8.5622;EUR;EUR;1.0
+MUC;Munich Airport;Munich;Alemania;48.3538;11.7861;EUR;EUR;1.0
+BER;Berlin Brandenburg;Berlin;Alemania;52.3667;13.5033;EUR;EUR;1.0
+ZRH;Zurich Airport;Zurich;Suiza;47.4581;8.5555;CHF;CHF;0.95
+GVA;Geneva Airport;Ginebra;Suiza;46.2381;6.1089;CHF;CHF;0.95
+VIE;Vienna International;Viena;Austria;48.1103;16.5697;EUR;EUR;1.0
+PRG;Vaclav Havel Prague;Praga;Republica Checa;50.1008;14.26;CZK;Kc;25.1
+WAW;Warsaw Chopin;Varsovia;Polonia;52.1657;20.9671;PLN;zl;4.3
+CPH;Copenhagen Airport;Copenhague;Dinamarca;55.6181;12.656;DKK;kr;7.46
+ARN;Stockholm Arlanda;Estocolmo;Suecia;59.6519;17.9186;SEK;kr;11.2
+OSL;Oslo Gardermoen;Oslo;Noruega;60.1939;11.1004;NOK;kr;11.7
+HEL;Helsinki Airport;Helsinki;Finlandia;60.3172;24.9633;EUR;EUR;1.0
+FCO;Fiumicino;Roma;Italia;41.8003;12.2389;EUR;EUR;1.0
+MXP;Milan Malpensa;Milan;Italia;45.6306;8.7281;EUR;EUR;1.0
+VCE;Venice Marco Polo;Venecia;Italia;45.5053;12.3519;EUR;EUR;1.0
+ATH;Athens International;Atenas;Grecia;37.9364;23.9445;EUR;EUR;1.0
+SOF;Sofia Airport;Sofia;Bulgaria;42.6967;23.4114;BGN;lev;1.96
+OTP;Henri Coanda;Bucarest;Rumania;44.5711;26.085;RON;lei;4.97
+BUD;Budapest Ferenc Liszt;Budapest;Hungria;47.4369;19.2556;HUF;Ft;390.0
+ZAG;Franjo Tudman;Zagreb;Croacia;45.7429;16.0688;EUR;EUR;1.0
+BEG;Belgrade Nikola Tesla;Belgrado;Serbia;44.8184;20.3091;RSD;din;117.0
+SJJ;Sarajevo International;Sarajevo;Bosnia y Herzegovina;43.8246;18.3315;BAM;KM;1.96
+SKP;Skopje International;Skopie;Macedonia del Norte;41.9616;21.6214;MKD;den;61.5
+TIA;Tirana International;Tirana;Albania;41.4147;19.7206;ALL;lek;100.0
+IST;Istanbul Airport;Estambul;Turquia;41.2753;28.7519;TRY;TL;35.0
+RIX;Riga International;Riga;Letonia;56.9236;23.9711;EUR;EUR;1.0
+TLL;Tallinn Airport;Tallin;Estonia;59.4133;24.8328;EUR;EUR;1.0
+VNO;Vilnius Airport;Vilna;Lituania;54.6341;25.2858;EUR;EUR;1.0
+

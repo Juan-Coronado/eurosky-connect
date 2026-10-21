@@ -1,0 +1,4 @@
+Servidor C++ compilado y ejecutado localmente.
+Endpoints comprobados: aeropuertos, calculo MAD, comparacion de algoritmos y simulacion Monte Carlo de 100 iteraciones.
+Se rechazaron GET de mutacion, origen inexistente y parametros numericos no finitos.
+La clave Maps fue retirada de las fuentes de trabajo; el mapa es opcional.

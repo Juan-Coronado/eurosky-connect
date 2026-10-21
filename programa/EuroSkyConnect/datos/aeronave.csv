@@ -1,0 +1,4 @@
+codigo;modelo;capacidad;costoDiarioEUR;autonomiaKm;activa
+A321-R01;Airbus A321neo (configuracion academica);255;28500;6100;0
+A320-R02;Airbus A320neo;186;23200;6300;1
+E195-R03;Embraer E195-E2;132;16800;4800;0

@@ -1,0 +1,1390 @@
+{
+  "origen": "MAD",
+  "destinoComparacion": "MXP",
+  "capacidadAeronave": 186,
+  "costoAlquilerEUR": 23200.0,
+  "bfs": {
+    "visitados": 40,
+    "orden": "MAD -> OPO -> BCN -> LIS -> GVA -> ORY -> CDG -> LHR -> MXP -> FCO -> ZRH -> LUX -> ...",
+    "ordenCompleto": "MAD -> OPO -> BCN -> LIS -> GVA -> ORY -> CDG -> LHR -> MXP -> FCO -> ZRH -> LUX -> FRA -> BRU -> AMS -> MAN -> DUB -> VCE -> MUC -> ZAG -> SJJ -> TIA -> PRG -> VIE -> BUD -> BEG -> SKP -> SOF -> ATH -> BER -> WAW -> OTP -> IST -> CPH -> VNO -> RIX -> OSL -> ARN -> TLL -> HEL"
+  },
+  "dfs": {
+    "visitados": 40,
+    "orden": "MAD -> OPO -> LIS -> BCN -> GVA -> MXP -> ZRH -> MUC -> PRG -> BER -> CPH -> OSL -> ...",
+    "ordenCompleto": "MAD -> OPO -> LIS -> BCN -> GVA -> MXP -> ZRH -> MUC -> PRG -> BER -> CPH -> OSL -> ARN -> TLL -> HEL -> RIX -> VNO -> WAW -> BUD -> VIE -> ZAG -> SJJ -> BEG -> SKP -> SOF -> OTP -> IST -> ATH -> TIA -> VCE -> FCO -> AMS -> BRU -> LUX -> FRA -> CDG -> ORY -> LHR -> MAN -> DUB"
+  },
+  "greedy": {
+    "ruta": "MAD -> LIS -> BCN -> MXP",
+    "tramos": 3,
+    "tiempoMin": 395,
+    "costoEUR": 21188.58,
+    "costoTotalEUR": 44388.58,
+    "ingresoEUR": 79081.62,
+    "beneficioEUR": 57893.04,
+    "beneficioNetoEUR": 34693.04,
+    "detalle": [
+      {
+        "origen": "MAD",
+        "destino": "LIS",
+        "origenCiudad": "Madrid",
+        "destinoCiudad": "Lisboa",
+        "lat1": 40.5,
+        "lng1": -3.57,
+        "lat2": 38.77,
+        "lng2": -9.13,
+        "distanciaKm": 514,
+        "tiempoMin": 70,
+        "pasajeros": 186,
+        "costoEUR": 5367.45,
+        "ingresoEUR": 23166.3,
+        "beneficioEUR": 17798.85
+      },
+      {
+        "origen": "LIS",
+        "destino": "BCN",
+        "origenCiudad": "Lisboa",
+        "destinoCiudad": "Barcelona",
+        "lat1": 38.77,
+        "lng1": -9.13,
+        "lat2": 41.3,
+        "lng2": 2.08,
+        "distanciaKm": 995,
+        "tiempoMin": 105,
+        "pasajeros": 186,
+        "costoEUR": 8921.83,
+        "ingresoEUR": 29875.32,
+        "beneficioEUR": 20953.49
+      },
+      {
+        "origen": "BCN",
+        "destino": "MXP",
+        "origenCiudad": "Barcelona",
+        "destinoCiudad": "Milan",
+        "lat1": 41.3,
+        "lng1": 2.08,
+        "lat2": 45.63,
+        "lng2": 8.73,
+        "distanciaKm": 720,
+        "tiempoMin": 85,
+        "pasajeros": 186,
+        "costoEUR": 6899.3,
+        "ingresoEUR": 26040.0,
+        "beneficioEUR": 19140.7
+      }
+    ]
+  },
+  "dijkstra": {
+    "ruta": "MAD -> BCN -> MXP",
+    "tramos": 2,
+    "tiempoMin": 240,
+    "costoEUR": 11978.45,
+    "costoTotalEUR": 35178.45,
+    "ingresoEUR": 47098.92,
+    "beneficioEUR": 35120.47,
+    "beneficioNetoEUR": 11920.47,
+    "detalle": [
+      {
+        "origen": "MAD",
+        "destino": "BCN",
+        "origenCiudad": "Madrid",
+        "destinoCiudad": "Barcelona",
+        "lat1": 40.5,
+        "lng1": -3.57,
+        "lat2": 41.3,
+        "lng2": 2.08,
+        "distanciaKm": 483,
+        "tiempoMin": 65,
+        "pasajeros": 186,
+        "costoEUR": 5079.14,
+        "ingresoEUR": 21058.92,
+        "beneficioEUR": 15979.78
+      },
+      {
+        "origen": "BCN",
+        "destino": "MXP",
+        "origenCiudad": "Barcelona",
+        "destinoCiudad": "Milan",
+        "lat1": 41.3,
+        "lng1": 2.08,
+        "lat2": 45.63,
+        "lng2": 8.73,
+        "distanciaKm": 720,
+        "tiempoMin": 85,
+        "pasajeros": 186,
+        "costoEUR": 6899.3,
+        "ingresoEUR": 26040.0,
+        "beneficioEUR": 19140.7
+      }
+    ],
+    "estructura": "min-heap"
+  },
+  "bellmanFord": {
+    "ruta": "MAD",
+    "tramos": 0,
+    "cicloNegativo": true,
+    "criterio": "costo menos ingreso",
+    "rutasNegativas": [
+      {
+        "ruta": "MAD -> OPO",
+        "pesoNetoEUR": -11923.16,
+        "beneficioEUR": 11923.16
+      },
+      {
+        "ruta": "MAD -> BCN",
+        "pesoNetoEUR": -15979.78,
+        "beneficioEUR": 15979.78
+      },
+      {
+        "ruta": "MAD -> LIS",
+        "pesoNetoEUR": -17798.85,
+        "beneficioEUR": 17798.85
+      },
+      {
+        "ruta": "MAD -> GVA",
+        "pesoNetoEUR": -17878.18,
+        "beneficioEUR": 17878.18
+      },
+      {
+        "ruta": "MAD -> ORY",
+        "pesoNetoEUR": -17164.88,
+        "beneficioEUR": 17164.88
+      },
+      {
+        "ruta": "MAD -> CDG",
+        "pesoNetoEUR": -21984.83,
+        "beneficioEUR": 21984.83
+      },
+      {
+        "ruta": "BCN -> MAD",
+        "pesoNetoEUR": -13795.84,
+        "beneficioEUR": 13795.84
+      },
+      {
+        "ruta": "BCN -> GVA",
+        "pesoNetoEUR": -16972.04,
+        "beneficioEUR": 16972.04
+      },
+      {
+        "ruta": "BCN -> MXP",
+        "pesoNetoEUR": -19140.7,
+        "beneficioEUR": 19140.7
+      },
+      {
+        "ruta": "BCN -> ORY",
+        "pesoNetoEUR": -16417.62,
+        "beneficioEUR": 16417.62
+      },
+      {
+        "ruta": "BCN -> FCO",
+        "pesoNetoEUR": -18268.77,
+        "beneficioEUR": 18268.77
+      },
+      {
+        "ruta": "BCN -> ZRH",
+        "pesoNetoEUR": -20286.14,
+        "beneficioEUR": 20286.14
+      },
+      {
+        "ruta": "LIS -> OPO",
+        "pesoNetoEUR": -12417.73,
+        "beneficioEUR": 12417.73
+      },
+      {
+        "ruta": "LIS -> MAD",
+        "pesoNetoEUR": -15857.37,
+        "beneficioEUR": 15857.37
+      },
+      {
+        "ruta": "LIS -> BCN",
+        "pesoNetoEUR": -20953.49,
+        "beneficioEUR": 20953.49
+      },
+      {
+        "ruta": "LIS -> ORY",
+        "pesoNetoEUR": -18885.76,
+        "beneficioEUR": 18885.76
+      },
+      {
+        "ruta": "LIS -> CDG",
+        "pesoNetoEUR": -23151.6,
+        "beneficioEUR": 23151.6
+      },
+      {
+        "ruta": "LIS -> GVA",
+        "pesoNetoEUR": -24744.93,
+        "beneficioEUR": 24744.93
+      },
+      {
+        "ruta": "OPO -> LIS",
+        "pesoNetoEUR": -12237.73,
+        "beneficioEUR": 12237.73
+      },
+      {
+        "ruta": "OPO -> MAD",
+        "pesoNetoEUR": -15096.17,
+        "beneficioEUR": 15096.17
+      },
+      {
+        "ruta": "OPO -> BCN",
+        "pesoNetoEUR": -17782.79,
+        "beneficioEUR": 17782.79
+      },
+      {
+        "ruta": "OPO -> ORY",
+        "pesoNetoEUR": -18668.52,
+        "beneficioEUR": 18668.52
+      },
+      {
+        "ruta": "OPO -> CDG",
+        "pesoNetoEUR": -21219.23,
+        "beneficioEUR": 21219.23
+      },
+      {
+        "ruta": "OPO -> LHR",
+        "pesoNetoEUR": -23154.73,
+        "beneficioEUR": 23154.73
+      },
+      {
+        "ruta": "CDG -> ORY",
+        "pesoNetoEUR": -10103.07,
+        "beneficioEUR": 10103.07
+      },
+      {
+        "ruta": "CDG -> BRU",
+        "pesoNetoEUR": -11465.8,
+        "beneficioEUR": 11465.8
+      },
+      {
+        "ruta": "CDG -> LUX",
+        "pesoNetoEUR": -15275.31,
+        "beneficioEUR": 15275.31
+      },
+      {
+        "ruta": "CDG -> LHR",
+        "pesoNetoEUR": -12417.86,
+        "beneficioEUR": 12417.86
+      },
+      {
+        "ruta": "CDG -> AMS",
+        "pesoNetoEUR": -14687.48,
+        "beneficioEUR": 14687.48
+      },
+      {
+        "ruta": "CDG -> GVA",
+        "pesoNetoEUR": -14027.79,
+        "beneficioEUR": 14027.79
+      },
+      {
+        "ruta": "ORY -> CDG",
+        "pesoNetoEUR": -10823.07,
+        "beneficioEUR": 10823.07
+      },
+      {
+        "ruta": "ORY -> BRU",
+        "pesoNetoEUR": -14069.95,
+        "beneficioEUR": 14069.95
+      },
+      {
+        "ruta": "ORY -> LUX",
+        "pesoNetoEUR": -16170.49,
+        "beneficioEUR": 16170.49
+      },
+      {
+        "ruta": "ORY -> LHR",
+        "pesoNetoEUR": -13270.26,
+        "beneficioEUR": 13270.26
+      },
+      {
+        "ruta": "ORY -> GVA",
+        "pesoNetoEUR": -15369.04,
+        "beneficioEUR": 15369.04
+      },
+      {
+        "ruta": "ORY -> AMS",
+        "pesoNetoEUR": -16915.46,
+        "beneficioEUR": 16915.46
+      },
+      {
+        "ruta": "LHR -> MAN",
+        "pesoNetoEUR": -11456.92,
+        "beneficioEUR": 11456.92
+      },
+      {
+        "ruta": "LHR -> CDG",
+        "pesoNetoEUR": -14755.55,
+        "beneficioEUR": 14755.55
+      },
+      {
+        "ruta": "LHR -> BRU",
+        "pesoNetoEUR": -16389.45,
+        "beneficioEUR": 16389.45
+      },
+      {
+        "ruta": "LHR -> ORY",
+        "pesoNetoEUR": -13089.63,
+        "beneficioEUR": 13089.63
+      },
+      {
+        "ruta": "LHR -> AMS",
+        "pesoNetoEUR": -14057.64,
+        "beneficioEUR": 14057.64
+      },
+      {
+        "ruta": "LHR -> DUB",
+        "pesoNetoEUR": -17222.69,
+        "beneficioEUR": 17222.69
+      },
+      {
+        "ruta": "MAN -> LHR",
+        "pesoNetoEUR": -12139.16,
+        "beneficioEUR": 12139.16
+      },
+      {
+        "ruta": "MAN -> DUB",
+        "pesoNetoEUR": -13939.9,
+        "beneficioEUR": 13939.9
+      },
+      {
+        "ruta": "MAN -> AMS",
+        "pesoNetoEUR": -17238.42,
+        "beneficioEUR": 17238.42
+      },
+      {
+        "ruta": "MAN -> BRU",
+        "pesoNetoEUR": -12535.06,
+        "beneficioEUR": 12535.06
+      },
+      {
+        "ruta": "MAN -> CDG",
+        "pesoNetoEUR": -16524.92,
+        "beneficioEUR": 16524.92
+      },
+      {
+        "ruta": "MAN -> ORY",
+        "pesoNetoEUR": -18245.71,
+        "beneficioEUR": 18245.71
+      },
+      {
+        "ruta": "DUB -> MAN",
+        "pesoNetoEUR": -12135.37,
+        "beneficioEUR": 12135.37
+      },
+      {
+        "ruta": "DUB -> LHR",
+        "pesoNetoEUR": -15188.13,
+        "beneficioEUR": 15188.13
+      },
+      {
+        "ruta": "DUB -> AMS",
+        "pesoNetoEUR": -16013.02,
+        "beneficioEUR": 16013.02
+      },
+      {
+        "ruta": "DUB -> BRU",
+        "pesoNetoEUR": -15759.42,
+        "beneficioEUR": 15759.42
+      },
+      {
+        "ruta": "DUB -> CDG",
+        "pesoNetoEUR": -17865.35,
+        "beneficioEUR": 17865.35
+      },
+      {
+        "ruta": "DUB -> ORY",
+        "pesoNetoEUR": -19487.69,
+        "beneficioEUR": 19487.69
+      },
+      {
+        "ruta": "AMS -> BRU",
+        "pesoNetoEUR": -11100.67,
+        "beneficioEUR": 11100.67
+      },
+      {
+        "ruta": "AMS -> LUX",
+        "pesoNetoEUR": -13967.52,
+        "beneficioEUR": 13967.52
+      },
+      {
+        "ruta": "AMS -> FRA",
+        "pesoNetoEUR": -15516.76,
+        "beneficioEUR": 15516.76
+      },
+      {
+        "ruta": "AMS -> LHR",
+        "pesoNetoEUR": -12586.09,
+        "beneficioEUR": 12586.09
+      },
+      {
+        "ruta": "AMS -> CDG",
+        "pesoNetoEUR": -14687.48,
+        "beneficioEUR": 14687.48
+      },
+      {
+        "ruta": "AMS -> ORY",
+        "pesoNetoEUR": -16550.87,
+        "beneficioEUR": 16550.87
+      },
+      {
+        "ruta": "BRU -> AMS",
+        "pesoNetoEUR": -11820.67,
+        "beneficioEUR": 11820.67
+      },
+      {
+        "ruta": "BRU -> LUX",
+        "pesoNetoEUR": -12783.68,
+        "beneficioEUR": 12783.68
+      },
+      {
+        "ruta": "BRU -> CDG",
+        "pesoNetoEUR": -15828.34,
+        "beneficioEUR": 15828.34
+      },
+      {
+        "ruta": "BRU -> ORY",
+        "pesoNetoEUR": -12686.79,
+        "beneficioEUR": 12686.79
+      },
+      {
+        "ruta": "BRU -> FRA",
+        "pesoNetoEUR": -14657.98,
+        "beneficioEUR": 14657.98
+      },
+      {
+        "ruta": "BRU -> LHR",
+        "pesoNetoEUR": -15622.75,
+        "beneficioEUR": 15622.75
+      },
+      {
+        "ruta": "LUX -> FRA",
+        "pesoNetoEUR": -10477.9,
+        "beneficioEUR": 10477.9
+      },
+      {
+        "ruta": "LUX -> BRU",
+        "pesoNetoEUR": -13513.98,
+        "beneficioEUR": 13513.98
+      },
+      {
+        "ruta": "LUX -> CDG",
+        "pesoNetoEUR": -15815.31,
+        "beneficioEUR": 15815.31
+      },
+      {
+        "ruta": "LUX -> ZRH",
+        "pesoNetoEUR": -12580.72,
+        "beneficioEUR": 12580.72
+      },
+      {
+        "ruta": "LUX -> ORY",
+        "pesoNetoEUR": -12934.21,
+        "beneficioEUR": 12934.21
+      },
+      {
+        "ruta": "LUX -> AMS",
+        "pesoNetoEUR": -16181.52,
+        "beneficioEUR": 16181.52
+      },
+      {
+        "ruta": "FRA -> LUX",
+        "pesoNetoEUR": -11595.82,
+        "beneficioEUR": 11595.82
+      },
+      {
+        "ruta": "FRA -> ZRH",
+        "pesoNetoEUR": -14112.44,
+        "beneficioEUR": 14112.44
+      },
+      {
+        "ruta": "FRA -> MUC",
+        "pesoNetoEUR": -15832.29,
+        "beneficioEUR": 15832.29
+      },
+      {
+        "ruta": "FRA -> BRU",
+        "pesoNetoEUR": -10553.02,
+        "beneficioEUR": 10553.02
+      },
+      {
+        "ruta": "FRA -> AMS",
+        "pesoNetoEUR": -14788.32,
+        "beneficioEUR": 14788.32
+      },
+      {
+        "ruta": "FRA -> PRG",
+        "pesoNetoEUR": -16713.04,
+        "beneficioEUR": 16713.04
+      },
+      {
+        "ruta": "MUC -> ZRH",
+        "pesoNetoEUR": -12103.56,
+        "beneficioEUR": 12103.56
+      },
+      {
+        "ruta": "MUC -> PRG",
+        "pesoNetoEUR": -13761.67,
+        "beneficioEUR": 13761.67
+      },
+      {
+        "ruta": "MUC -> FRA",
+        "pesoNetoEUR": -15652.29,
+        "beneficioEUR": 15652.29
+      },
+      {
+        "ruta": "MUC -> VCE",
+        "pesoNetoEUR": -12029.95,
+        "beneficioEUR": 12029.95
+      },
+      {
+        "ruta": "MUC -> VIE",
+        "pesoNetoEUR": -14520.57,
+        "beneficioEUR": 14520.57
+      },
+      {
+        "ruta": "MUC -> MXP",
+        "pesoNetoEUR": -16332.96,
+        "beneficioEUR": 16332.96
+      },
+      {
+        "ruta": "BER -> PRG",
+        "pesoNetoEUR": -11891.77,
+        "beneficioEUR": 11891.77
+      },
+      {
+        "ruta": "BER -> CPH",
+        "pesoNetoEUR": -14362.44,
+        "beneficioEUR": 14362.44
+      },
+      {
+        "ruta": "BER -> FRA",
+        "pesoNetoEUR": -15274.75,
+        "beneficioEUR": 15274.75
+      },
+      {
+        "ruta": "BER -> MUC",
+        "pesoNetoEUR": -13266.1,
+        "beneficioEUR": 13266.1
+      },
+      {
+        "ruta": "BER -> WAW",
+        "pesoNetoEUR": -15543.09,
+        "beneficioEUR": 15543.09
+      },
+      {
+        "ruta": "BER -> VIE",
+        "pesoNetoEUR": -17223.81,
+        "beneficioEUR": 17223.81
+      },
+      {
+        "ruta": "ZRH -> MXP",
+        "pesoNetoEUR": -12187.52,
+        "beneficioEUR": 12187.52
+      },
+      {
+        "ruta": "ZRH -> GVA",
+        "pesoNetoEUR": -12520.95,
+        "beneficioEUR": 12520.95
+      },
+      {
+        "ruta": "ZRH -> MUC",
+        "pesoNetoEUR": -15897.42,
+        "beneficioEUR": 15897.42
+      },
+      {
+        "ruta": "ZRH -> FRA",
+        "pesoNetoEUR": -12694.43,
+        "beneficioEUR": 12694.43
+      },
+      {
+        "ruta": "ZRH -> LUX",
+        "pesoNetoEUR": -14594.58,
+        "beneficioEUR": 14594.58
+      },
+      {
+        "ruta": "ZRH -> VCE",
+        "pesoNetoEUR": -15034.28,
+        "beneficioEUR": 15034.28
+      },
+      {
+        "ruta": "GVA -> MXP",
+        "pesoNetoEUR": -12088.81,
+        "beneficioEUR": 12088.81
+      },
+      {
+        "ruta": "GVA -> ZRH",
+        "pesoNetoEUR": -13848.99,
+        "beneficioEUR": 13848.99
+      },
+      {
+        "ruta": "GVA -> LUX",
+        "pesoNetoEUR": -16593.14,
+        "beneficioEUR": 16593.14
+      },
+      {
+        "ruta": "GVA -> ORY",
+        "pesoNetoEUR": -13301.81,
+        "beneficioEUR": 13301.81
+      },
+      {
+        "ruta": "GVA -> CDG",
+        "pesoNetoEUR": -13039.66,
+        "beneficioEUR": 13039.66
+      },
+      {
+        "ruta": "GVA -> FRA",
+        "pesoNetoEUR": -17297.74,
+        "beneficioEUR": 17297.74
+      },
+      {
+        "ruta": "VIE -> BUD",
+        "pesoNetoEUR": -11488.07,
+        "beneficioEUR": 11488.07
+      },
+      {
+        "ruta": "VIE -> ZAG",
+        "pesoNetoEUR": -13948.5,
+        "beneficioEUR": 13948.5
+      },
+      {
+        "ruta": "VIE -> PRG",
+        "pesoNetoEUR": -15665.65,
+        "beneficioEUR": 15665.65
+      },
+      {
+        "ruta": "VIE -> MUC",
+        "pesoNetoEUR": -12834.87,
+        "beneficioEUR": 12834.87
+      },
+      {
+        "ruta": "VIE -> VCE",
+        "pesoNetoEUR": -14870.29,
+        "beneficioEUR": 14870.29
+      },
+      {
+        "ruta": "VIE -> BEG",
+        "pesoNetoEUR": -17157.93,
+        "beneficioEUR": 17157.93
+      },
+      {
+        "ruta": "PRG -> BER",
+        "pesoNetoEUR": -12070.81,
+        "beneficioEUR": 12070.81
+      },
+      {
+        "ruta": "PRG -> MUC",
+        "pesoNetoEUR": -13760.72,
+        "beneficioEUR": 13760.72
+      },
+      {
+        "ruta": "PRG -> VIE",
+        "pesoNetoEUR": -15485.6,
+        "beneficioEUR": 15485.6
+      },
+      {
+        "ruta": "PRG -> FRA",
+        "pesoNetoEUR": -12052.36,
+        "beneficioEUR": 12052.36
+      },
+      {
+        "ruta": "PRG -> BUD",
+        "pesoNetoEUR": -15433.74,
+        "beneficioEUR": 15433.74
+      },
+      {
+        "ruta": "PRG -> ZAG",
+        "pesoNetoEUR": -17267.49,
+        "beneficioEUR": 17267.49
+      },
+      {
+        "ruta": "WAW -> VNO",
+        "pesoNetoEUR": -12990.8,
+        "beneficioEUR": 12990.8
+      },
+      {
+        "ruta": "WAW -> BER",
+        "pesoNetoEUR": -15451.63,
+        "beneficioEUR": 15451.63
+      },
+      {
+        "ruta": "WAW -> PRG",
+        "pesoNetoEUR": -15129.68,
+        "beneficioEUR": 15129.68
+      },
+      {
+        "ruta": "WAW -> BUD",
+        "pesoNetoEUR": -13827.09,
+        "beneficioEUR": 13827.09
+      },
+      {
+        "ruta": "WAW -> VIE",
+        "pesoNetoEUR": -15862.67,
+        "beneficioEUR": 15862.67
+      },
+      {
+        "ruta": "WAW -> RIX",
+        "pesoNetoEUR": -17544.5,
+        "beneficioEUR": 17544.5
+      },
+      {
+        "ruta": "CPH -> BER",
+        "pesoNetoEUR": -13474.4,
+        "beneficioEUR": 13474.4
+      },
+      {
+        "ruta": "CPH -> OSL",
+        "pesoNetoEUR": -16240.24,
+        "beneficioEUR": 16240.24
+      },
+      {
+        "ruta": "CPH -> ARN",
+        "pesoNetoEUR": -18044.38,
+        "beneficioEUR": 18044.38
+      },
+      {
+        "ruta": "CPH -> PRG",
+        "pesoNetoEUR": -15147.02,
+        "beneficioEUR": 15147.02
+      },
+      {
+        "ruta": "CPH -> AMS",
+        "pesoNetoEUR": -17234.73,
+        "beneficioEUR": 17234.73
+      },
+      {
+        "ruta": "CPH -> WAW",
+        "pesoNetoEUR": -16189.11,
+        "beneficioEUR": 16189.11
+      },
+      {
+        "ruta": "ARN -> OSL",
+        "pesoNetoEUR": -13444.15,
+        "beneficioEUR": 13444.15
+      },
+      {
+        "ruta": "ARN -> TLL",
+        "pesoNetoEUR": -14563.41,
+        "beneficioEUR": 14563.41
+      },
+      {
+        "ruta": "ARN -> HEL",
+        "pesoNetoEUR": -16758.77,
+        "beneficioEUR": 16758.77
+      },
+      {
+        "ruta": "ARN -> RIX",
+        "pesoNetoEUR": -13828.92,
+        "beneficioEUR": 13828.92
+      },
+      {
+        "ruta": "ARN -> CPH",
+        "pesoNetoEUR": -16387.21,
+        "beneficioEUR": 16387.21
+      },
+      {
+        "ruta": "ARN -> VNO",
+        "pesoNetoEUR": -18652.6,
+        "beneficioEUR": 18652.6
+      },
+      {
+        "ruta": "OSL -> ARN",
+        "pesoNetoEUR": -12198.56,
+        "beneficioEUR": 12198.56
+      },
+      {
+        "ruta": "OSL -> CPH",
+        "pesoNetoEUR": -15880.31,
+        "beneficioEUR": 15880.31
+      },
+      {
+        "ruta": "OSL -> HEL",
+        "pesoNetoEUR": -19275.25,
+        "beneficioEUR": 19275.25
+      },
+      {
+        "ruta": "OSL -> TLL",
+        "pesoNetoEUR": -15846.88,
+        "beneficioEUR": 15846.88
+      },
+      {
+        "ruta": "OSL -> RIX",
+        "pesoNetoEUR": -16988.84,
+        "beneficioEUR": 16988.84
+      },
+      {
+        "ruta": "OSL -> BER",
+        "pesoNetoEUR": -20306.55,
+        "beneficioEUR": 20306.55
+      },
+      {
+        "ruta": "HEL -> TLL",
+        "pesoNetoEUR": -10824.11,
+        "beneficioEUR": 10824.11
+      },
+      {
+        "ruta": "HEL -> RIX",
+        "pesoNetoEUR": -14665.76,
+        "beneficioEUR": 14665.76
+      },
+      {
+        "ruta": "HEL -> ARN",
+        "pesoNetoEUR": -16397.84,
+        "beneficioEUR": 16397.84
+      },
+      {
+        "ruta": "HEL -> VNO",
+        "pesoNetoEUR": -12825.38,
+        "beneficioEUR": 12825.38
+      },
+      {
+        "ruta": "HEL -> OSL",
+        "pesoNetoEUR": -17695.04,
+        "beneficioEUR": 17695.04
+      },
+      {
+        "ruta": "HEL -> CPH",
+        "pesoNetoEUR": -20193.27,
+        "beneficioEUR": 20193.27
+      },
+      {
+        "ruta": "FCO -> VCE",
+        "pesoNetoEUR": -13116.71,
+        "beneficioEUR": 13116.71
+      },
+      {
+        "ruta": "FCO -> MXP",
+        "pesoNetoEUR": -15473.58,
+        "beneficioEUR": 15473.58
+      },
+      {
+        "ruta": "FCO -> ZAG",
+        "pesoNetoEUR": -17234.17,
+        "beneficioEUR": 17234.17
+      },
+      {
+        "ruta": "FCO -> SJJ",
+        "pesoNetoEUR": -13864.27,
+        "beneficioEUR": 13864.27
+      },
+      {
+        "ruta": "FCO -> TIA",
+        "pesoNetoEUR": -16436.48,
+        "beneficioEUR": 16436.48
+      },
+      {
+        "ruta": "FCO -> ZRH",
+        "pesoNetoEUR": -18526.42,
+        "beneficioEUR": 18526.42
+      },
+      {
+        "ruta": "MXP -> ZRH",
+        "pesoNetoEUR": -12188.51,
+        "beneficioEUR": 12188.51
+      },
+      {
+        "ruta": "MXP -> GVA",
+        "pesoNetoEUR": -13903.8,
+        "beneficioEUR": 13903.8
+      },
+      {
+        "ruta": "MXP -> VCE",
+        "pesoNetoEUR": -15520.2,
+        "beneficioEUR": 15520.2
+      },
+      {
+        "ruta": "MXP -> MUC",
+        "pesoNetoEUR": -13387.8,
+        "beneficioEUR": 13387.8
+      },
+      {
+        "ruta": "MXP -> LUX",
+        "pesoNetoEUR": -16066.72,
+        "beneficioEUR": 16066.72
+      },
+      {
+        "ruta": "MXP -> FRA",
+        "pesoNetoEUR": -17708.2,
+        "beneficioEUR": 17708.2
+      },
+      {
+        "ruta": "VCE -> MXP",
+        "pesoNetoEUR": -12629.47,
+        "beneficioEUR": 12629.47
+      },
+      {
+        "ruta": "VCE -> ZAG",
+        "pesoNetoEUR": -13228.51,
+        "beneficioEUR": 13228.51
+      },
+      {
+        "ruta": "VCE -> MUC",
+        "pesoNetoEUR": -16163.55,
+        "beneficioEUR": 16163.55
+      },
+      {
+        "ruta": "VCE -> ZRH",
+        "pesoNetoEUR": -13073.71,
+        "beneficioEUR": 13073.71
+      },
+      {
+        "ruta": "VCE -> FCO",
+        "pesoNetoEUR": -15330.71,
+        "beneficioEUR": 15330.71
+      },
+      {
+        "ruta": "VCE -> VIE",
+        "pesoNetoEUR": -15900.13,
+        "beneficioEUR": 15900.13
+      },
+      {
+        "ruta": "ATH -> SKP",
+        "pesoNetoEUR": -12300.27,
+        "beneficioEUR": 12300.27
+      },
+      {
+        "ruta": "ATH -> TIA",
+        "pesoNetoEUR": -15970.82,
+        "beneficioEUR": 15970.82
+      },
+      {
+        "ruta": "ATH -> SOF",
+        "pesoNetoEUR": -17564.46,
+        "beneficioEUR": 17564.46
+      },
+      {
+        "ruta": "ATH -> IST",
+        "pesoNetoEUR": -14288.54,
+        "beneficioEUR": 14288.54
+      },
+      {
+        "ruta": "ATH -> OTP",
+        "pesoNetoEUR": -15703.32,
+        "beneficioEUR": 15703.32
+      },
+      {
+        "ruta": "ATH -> SJJ",
+        "pesoNetoEUR": -19742.28,
+        "beneficioEUR": 19742.28
+      },
+      {
+        "ruta": "SOF -> SKP",
+        "pesoNetoEUR": -11361.11,
+        "beneficioEUR": 11361.11
+      },
+      {
+        "ruta": "SOF -> OTP",
+        "pesoNetoEUR": -14032.29,
+        "beneficioEUR": 14032.29
+      },
+      {
+        "ruta": "SOF -> TIA",
+        "pesoNetoEUR": -15924.19,
+        "beneficioEUR": 15924.19
+      },
+      {
+        "ruta": "SOF -> BEG",
+        "pesoNetoEUR": -12567.37,
+        "beneficioEUR": 12567.37
+      },
+      {
+        "ruta": "SOF -> SJJ",
+        "pesoNetoEUR": -15112.17,
+        "beneficioEUR": 15112.17
+      },
+      {
+        "ruta": "SOF -> IST",
+        "pesoNetoEUR": -17007.36,
+        "beneficioEUR": 17007.36
+      },
+      {
+        "ruta": "OTP -> SOF",
+        "pesoNetoEUR": -12232.1,
+        "beneficioEUR": 12232.1
+      },
+      {
+        "ruta": "OTP -> IST",
+        "pesoNetoEUR": -14824.02,
+        "beneficioEUR": 14824.02
+      },
+      {
+        "ruta": "OTP -> BEG",
+        "pesoNetoEUR": -16653.63,
+        "beneficioEUR": 16653.63
+      },
+      {
+        "ruta": "OTP -> SKP",
+        "pesoNetoEUR": -12753.28,
+        "beneficioEUR": 12753.28
+      },
+      {
+        "ruta": "OTP -> BUD",
+        "pesoNetoEUR": -16383.04,
+        "beneficioEUR": 16383.04
+      },
+      {
+        "ruta": "OTP -> SJJ",
+        "pesoNetoEUR": -17999.14,
+        "beneficioEUR": 17999.14
+      },
+      {
+        "ruta": "BUD -> VIE",
+        "pesoNetoEUR": -12268.32,
+        "beneficioEUR": 12268.32
+      },
+      {
+        "ruta": "BUD -> BEG",
+        "pesoNetoEUR": -14587.78,
+        "beneficioEUR": 14587.78
+      },
+      {
+        "ruta": "BUD -> ZAG",
+        "pesoNetoEUR": -15052.72,
+        "beneficioEUR": 15052.72
+      },
+      {
+        "ruta": "BUD -> SJJ",
+        "pesoNetoEUR": -13584.92,
+        "beneficioEUR": 13584.92
+      },
+      {
+        "ruta": "BUD -> PRG",
+        "pesoNetoEUR": -15973.72,
+        "beneficioEUR": 15973.72
+      },
+      {
+        "ruta": "BUD -> WAW",
+        "pesoNetoEUR": -18089.49,
+        "beneficioEUR": 18089.49
+      },
+      {
+        "ruta": "ZAG -> VIE",
+        "pesoNetoEUR": -12502.38,
+        "beneficioEUR": 12502.38
+      },
+      {
+        "ruta": "ZAG -> SJJ",
+        "pesoNetoEUR": -12558.24,
+        "beneficioEUR": 12558.24
+      },
+      {
+        "ruta": "ZAG -> VCE",
+        "pesoNetoEUR": -15936.56,
+        "beneficioEUR": 15936.56
+      },
+      {
+        "ruta": "ZAG -> BUD",
+        "pesoNetoEUR": -12669.38,
+        "beneficioEUR": 12669.38
+      },
+      {
+        "ruta": "ZAG -> BEG",
+        "pesoNetoEUR": -14819.24,
+        "beneficioEUR": 14819.24
+      },
+      {
+        "ruta": "ZAG -> MUC",
+        "pesoNetoEUR": -15208.28,
+        "beneficioEUR": 15208.28
+      },
+      {
+        "ruta": "BEG -> SJJ",
+        "pesoNetoEUR": -11732.67,
+        "beneficioEUR": 11732.67
+      },
+      {
+        "ruta": "BEG -> BUD",
+        "pesoNetoEUR": -14227.78,
+        "beneficioEUR": 14227.78
+      },
+      {
+        "ruta": "BEG -> SKP",
+        "pesoNetoEUR": -16096.83,
+        "beneficioEUR": 16096.83
+      },
+      {
+        "ruta": "BEG -> SOF",
+        "pesoNetoEUR": -12747.46,
+        "beneficioEUR": 12747.46
+      },
+      {
+        "ruta": "BEG -> ZAG",
+        "pesoNetoEUR": -14638.31,
+        "beneficioEUR": 14638.31
+      },
+      {
+        "ruta": "BEG -> TIA",
+        "pesoNetoEUR": -16512.04,
+        "beneficioEUR": 16512.04
+      },
+      {
+        "ruta": "SJJ -> BEG",
+        "pesoNetoEUR": -11057.9,
+        "beneficioEUR": 11057.9
+      },
+      {
+        "ruta": "SJJ -> ZAG",
+        "pesoNetoEUR": -13862.06,
+        "beneficioEUR": 13862.06
+      },
+      {
+        "ruta": "SJJ -> TIA",
+        "pesoNetoEUR": -15584.42,
+        "beneficioEUR": 15584.42
+      },
+      {
+        "ruta": "SJJ -> SKP",
+        "pesoNetoEUR": -12537.73,
+        "beneficioEUR": 12537.73
+      },
+      {
+        "ruta": "SJJ -> BUD",
+        "pesoNetoEUR": -14401.6,
+        "beneficioEUR": 14401.6
+      },
+      {
+        "ruta": "SJJ -> SOF",
+        "pesoNetoEUR": -16708.77,
+        "beneficioEUR": 16708.77
+      },
+      {
+        "ruta": "SKP -> SOF",
+        "pesoNetoEUR": -11180.74,
+        "beneficioEUR": 11180.74
+      },
+      {
+        "ruta": "SKP -> TIA",
+        "pesoNetoEUR": -12832.31,
+        "beneficioEUR": 12832.31
+      },
+      {
+        "ruta": "SKP -> BEG",
+        "pesoNetoEUR": -15736.84,
+        "beneficioEUR": 15736.84
+      },
+      {
+        "ruta": "SKP -> SJJ",
+        "pesoNetoEUR": -11330.34,
+        "beneficioEUR": 11330.34
+      },
+      {
+        "ruta": "SKP -> OTP",
+        "pesoNetoEUR": -15191.06,
+        "beneficioEUR": 15191.06
+      },
+      {
+        "ruta": "SKP -> ATH",
+        "pesoNetoEUR": -16980.55,
+        "beneficioEUR": 16980.55
+      },
+      {
+        "ruta": "TIA -> SKP",
+        "pesoNetoEUR": -11908.74,
+        "beneficioEUR": 11908.74
+      },
+      {
+        "ruta": "TIA -> SJJ",
+        "pesoNetoEUR": -14502.53,
+        "beneficioEUR": 14502.53
+      },
+      {
+        "ruta": "TIA -> SOF",
+        "pesoNetoEUR": -14573.98,
+        "beneficioEUR": 14573.98
+      },
+      {
+        "ruta": "TIA -> BEG",
+        "pesoNetoEUR": -13386.89,
+        "beneficioEUR": 13386.89
+      },
+      {
+        "ruta": "TIA -> ATH",
+        "pesoNetoEUR": -16426.95,
+        "beneficioEUR": 16426.95
+      },
+      {
+        "ruta": "TIA -> ZAG",
+        "pesoNetoEUR": -18272.0,
+        "beneficioEUR": 18272.0
+      },
+      {
+        "ruta": "IST -> OTP",
+        "pesoNetoEUR": -13766.75,
+        "beneficioEUR": 13766.75
+      },
+      {
+        "ruta": "IST -> SOF",
+        "pesoNetoEUR": -15693.61,
+        "beneficioEUR": 15693.61
+      },
+      {
+        "ruta": "IST -> ATH",
+        "pesoNetoEUR": -17916.27,
+        "beneficioEUR": 17916.27
+      },
+      {
+        "ruta": "IST -> SKP",
+        "pesoNetoEUR": -14779.46,
+        "beneficioEUR": 14779.46
+      },
+      {
+        "ruta": "IST -> TIA",
+        "pesoNetoEUR": -17986.97,
+        "beneficioEUR": 17986.97
+      },
+      {
+        "ruta": "IST -> BEG",
+        "pesoNetoEUR": -19801.98,
+        "beneficioEUR": 19801.98
+      },
+      {
+        "ruta": "RIX -> VNO",
+        "pesoNetoEUR": -12338.27,
+        "beneficioEUR": 12338.27
+      },
+      {
+        "ruta": "RIX -> TLL",
+        "pesoNetoEUR": -13477.41,
+        "beneficioEUR": 13477.41
+      },
+      {
+        "ruta": "RIX -> HEL",
+        "pesoNetoEUR": -16451.0,
+        "beneficioEUR": 16451.0
+      },
+      {
+        "ruta": "RIX -> ARN",
+        "pesoNetoEUR": -13648.94,
+        "beneficioEUR": 13648.94
+      },
+      {
+        "ruta": "RIX -> WAW",
+        "pesoNetoEUR": -16330.78,
+        "beneficioEUR": 16330.78
+      },
+      {
+        "ruta": "RIX -> CPH",
+        "pesoNetoEUR": -18339.44,
+        "beneficioEUR": 18339.44
+      },
+      {
+        "ruta": "TLL -> HEL",
+        "pesoNetoEUR": -9917.15,
+        "beneficioEUR": 9917.15
+      },
+      {
+        "ruta": "TLL -> RIX",
+        "pesoNetoEUR": -13885.89,
+        "beneficioEUR": 13885.89
+      },
+      {
+        "ruta": "TLL -> ARN",
+        "pesoNetoEUR": -16339.6,
+        "beneficioEUR": 16339.6
+      },
+      {
+        "ruta": "TLL -> VNO",
+        "pesoNetoEUR": -13949.06,
+        "beneficioEUR": 13949.06
+      },
+      {
+        "ruta": "TLL -> OSL",
+        "pesoNetoEUR": -16273.3,
+        "beneficioEUR": 16273.3
+      },
+      {
+        "ruta": "TLL -> CPH",
+        "pesoNetoEUR": -19800.7,
+        "beneficioEUR": 19800.7
+      },
+      {
+        "ruta": "VNO -> RIX",
+        "pesoNetoEUR": -11978.27,
+        "beneficioEUR": 11978.27
+      },
+      {
+        "ruta": "VNO -> WAW",
+        "pesoNetoEUR": -14593.53,
+        "beneficioEUR": 14593.53
+      },
+      {
+        "ruta": "VNO -> TLL",
+        "pesoNetoEUR": -17212.82,
+        "beneficioEUR": 17212.82
+      },
+      {
+        "ruta": "VNO -> HEL",
+        "pesoNetoEUR": -12529.98,
+        "beneficioEUR": 12529.98
+      },
+      {
+        "ruta": "VNO -> ARN",
+        "pesoNetoEUR": -17124.38,
+        "beneficioEUR": 17124.38
+      },
+      {
+        "ruta": "VNO -> CPH",
+        "pesoNetoEUR": -19397.25,
+        "beneficioEUR": 19397.25
+      }
+    ]
+  },
+  "programacionDinamica": {
+    "ruta": "MAD -> LIS -> GVA -> FRA",
+    "tramos": 3,
+    "tiempoMin": 415,
+    "costoEUR": 22601.99,
+    "costoTotalEUR": 45801.99,
+    "ingresoEUR": 82443.52,
+    "beneficioEUR": 59841.53,
+    "beneficioNetoEUR": 36641.53,
+    "detalle": [
+      {
+        "origen": "MAD",
+        "destino": "LIS",
+        "origenCiudad": "Madrid",
+        "destinoCiudad": "Lisboa",
+        "lat1": 40.5,
+        "lng1": -3.57,
+        "lat2": 38.77,
+        "lng2": -9.13,
+        "distanciaKm": 514,
+        "tiempoMin": 70,
+        "pasajeros": 186,
+        "costoEUR": 5367.45,
+        "ingresoEUR": 23166.3,
+        "beneficioEUR": 17798.85
+      },
+      {
+        "origen": "LIS",
+        "destino": "GVA",
+        "origenCiudad": "Lisboa",
+        "destinoCiudad": "Ginebra",
+        "lat1": 38.77,
+        "lng1": -9.13,
+        "lat2": 46.24,
+        "lng2": 6.11,
+        "distanciaKm": 1496,
+        "tiempoMin": 145,
+        "pasajeros": 186,
+        "costoEUR": 12120.27,
+        "ingresoEUR": 36865.2,
+        "beneficioEUR": 24744.93
+      },
+      {
+        "origen": "GVA",
+        "destino": "FRA",
+        "origenCiudad": "Ginebra",
+        "destinoCiudad": "Frankfurt",
+        "lat1": 46.24,
+        "lng1": 6.11,
+        "lat2": 50.04,
+        "lng2": 8.56,
+        "distanciaKm": 460,
+        "tiempoMin": 65,
+        "pasajeros": 186,
+        "costoEUR": 5114.28,
+        "ingresoEUR": 22412.02,
+        "beneficioEUR": 17297.74
+      }
+    ],
+    "criterio": "maximo beneficio con 480 min y 3 tramos"
+  }
+}
